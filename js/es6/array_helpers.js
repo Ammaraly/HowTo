@@ -15,4 +15,9 @@ function someFunc(a) {
 // Map Helper
 var colorsCapitalized = colors.map((color) => (color[0].toUpperCase() + color.slice(1)));
 
-console.log(colorsCapitalized);
+// console.log(colorsCapitalized);
+
+// Filter Helper
+var longWordColors = colors.filter((color) => color.length > 5)
+
+console.log(longWordColors);
