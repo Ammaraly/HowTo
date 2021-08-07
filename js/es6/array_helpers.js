@@ -31,8 +31,14 @@ var colorStartsWhithP = colors.find((color) => color.startsWith("p"));
 
 var areAllColorsLongerThan4Chars = colors.every((color) => color.length > 4);
 
-console.log(areAllColorsLongerThan4Chars);
+// console.log(areAllColorsLongerThan4Chars);
 
 var areSomeColorsLongerThan4Chars = colors.some((color) => color.length > 4);
 
-console.log(areSomeColorsLongerThan4Chars);
+// console.log(areSomeColorsLongerThan4Chars);
+
+// Reduce Helper
+
+var concatColors = colors.reduce((concat, color) => concat ? `${concat}, ${color}` : color, "");
+
+console.log(concatColors);
