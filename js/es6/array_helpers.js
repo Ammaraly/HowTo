@@ -25,4 +25,14 @@ var longWordColors = colors.filter((color) => color.length > 5)
 // Find Helper
 
 var colorStartsWhithP = colors.find((color) => color.startsWith("p"));
-console.log(colorStartsWhithP);
+// console.log(colorStartsWhithP);
+
+// Every & Some
+
+var areAllColorsLongerThan4Chars = colors.every((color) => color.length > 4);
+
+console.log(areAllColorsLongerThan4Chars);
+
+var areSomeColorsLongerThan4Chars = colors.some((color) => color.length > 4);
+
+console.log(areSomeColorsLongerThan4Chars);
