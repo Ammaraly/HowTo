@@ -20,4 +20,9 @@ var colorsCapitalized = colors.map((color) => (color[0].toUpperCase() + color.sl
 // Filter Helper
 var longWordColors = colors.filter((color) => color.length > 5)
 
-console.log(longWordColors);
+// console.log(longWordColors);
+
+// Find Helper
+
+var colorStartsWhithP = colors.find((color) => color.startsWith("p"));
+console.log(colorStartsWhithP);
