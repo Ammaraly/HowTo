@@ -29,18 +29,18 @@
 
     // Methods used by all Greetr objects are defined in the prototype
     Greetr.prototype = {
-        fullName: function() {
+        fullName() {
             return `${this.firstName} ${this.lastName}`;
         },
 
-        validate: function() {
+        validate() {
             if (supportedLanguages.indexOf(this.language) === -1) {
                 throw "Unsupported Language";
             }
             return true;
         },
 
-        greet: function(formal = false) {
+        greet(formal = false) {
             var msg = formal ? this.formalGreeting() : this.greeting();
             if (console) console.log(msg);
             return this;
@@ -52,11 +52,11 @@
             return this;
         },
 
-        greeting: function() {
+        greeting() {
             return `${greetings[this.language]} ${this.firstName}!`;
         },
 
-        formalGreeting: function() {
+        formalGreeting() {
             return `${formalGreetings[this.language]}, ${this.fullName()}!`;
         },
 
