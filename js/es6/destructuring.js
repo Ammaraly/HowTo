@@ -26,10 +26,34 @@ const Team = {
     engineers: ["Arnold Rohan", "Janet Renner", "Beth Lesch", "Glenda Anderson"]
 }
 Team.__proto__ = iterable;
-testingTeam.__proto__ = iterable;
+testingTeam.__proto__ = Team.__proto__;
 
-for (member of Team) {
-    console.log(member);
+// for (member of Team) {
+//     console.log(member);
+// }
+
+class Comment {
+
+    constructor(content, children) {
+        this.content = content;
+        this.children = children;
+    }
+    *[Symbol.iterator]() {
+        yield this.content;
+        for (comment of this.children) {
+            yield* comment;
+        }
+    }
 }
 
-// console.log(Team.__proto__)
+const children = [
+    new Comment("good comment", []),
+    new Comment("bad comment", []),
+    new Comment("meh...", []),
+]
+
+const tree = new Comment("Great Post!", children);
+
+for (comment of tree) {
+    console.log(comment);
+}
