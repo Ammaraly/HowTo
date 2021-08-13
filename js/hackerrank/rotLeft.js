@@ -1,0 +1,14 @@
+
+
+function rotLeft(arr, rotations) {
+    var rotatedArray = [...arr]
+    for (var i = 0; i < rotations; i++) {
+        rotatedArray.push(rotatedArray.shift());
+    }
+    return rotatedArray;
+}
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(rotLeft(arr, 9))
+console.log(arr)
