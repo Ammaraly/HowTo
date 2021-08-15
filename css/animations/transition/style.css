@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-around; 
+}
+
+.move {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    transition-property: translate();
+    transition-duration: 1000ms;
+    transition-delay: 100ms;
+}
+
+.move:hover {
+    transform: translateX(900px);
+}
+
+#linear {
+    transition-timing-function: linear;
+}
+
+#ease-in {
+    transition-timing-function: ease-in;
+}
+
+#ease-out {
+    transition-timing-function: ease-out;
+}
+
+#ease-in-out {
+    transition-timing-function: ease-in-out;
+}
