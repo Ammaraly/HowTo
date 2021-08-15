@@ -43,18 +43,14 @@ body{
     border-style: none;
     border-radius: 40%;
     transition: 
-    background-color 300ms ease-in-out 300ms,
-    color 300ms ease-in-out 600ms,
-    width 300ms ease-in-out,
-    border-radius 300ms ease-out 900ms,
-    margin 300ms ease-in-out;
+    all 300ms;
 }
 
 .btn:hover {
+    transform: scale(0.8) rotate(1turn);
     margin-left: 0px;
     border-radius: 0%;
     width: 200px;
     background-color: black;
     color: whitesmoke;
-
 }
