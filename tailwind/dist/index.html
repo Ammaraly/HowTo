@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html x-data="{ dark: false}" x-bind:class=" dark ? 'dark' : '' " lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tailwind Mini Project</title>
 </head>
@@ -9,7 +10,10 @@
 <body class="bg-mainColor dark:bg-black">
     <div class="container min-h-screen p-2 mx-auto bg-gray-100 dark:bg-mainColor">
         <! - page header / headings ->
-            <section id="sect_header" class="text-center">
+            <section id="sect_header" class="relative text-center">
+                <button @click="dark = !dark"
+                    class="absolute px-4 py-2 font-semibold text-white rounded-full right-3 bg-mainColor dark:text-mainColor dark:bg-yellow-200">Toggle
+                    Dark Mode</button>
                 <div>
                     <h1 class="pt-5">Tom Gonzales home training</h1>
                     <h2 class="pt-1">I'll get you in
