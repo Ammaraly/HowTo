@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html x-data="{ dark: false}" x-bind:class=" dark ? 'dark' : '' " lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Tailwind Mini Project</title>
 </head>
 
-<body class="bg-blue-200">
-    some sample text here!
+<body class="bg-mainColor dark:bg-black">
+    <div class="container min-h-screen p-2 mx-auto bg-gray-100 dark:bg-mainColor">
+        <! - page header / headings ->
+            <section id="sect_header" class="relative text-center">
+                <button @click="dark = !dark"
+                    class="absolute px-4 py-2 font-semibold text-white rounded-full right-3 bg-mainColor dark:text-mainColor dark:bg-yellow-200">Toggle
+                    Dark Mode</button>
+                <div>
+                    <h1 class="pt-16 lg:pt-5 ">Tom Gonzales home training</h1>
+                    <h2 class="pt-1">I'll get you in
+                        shape!</h2>
+                    <h3>Muscle building • Functional training • Nutritional advice</h3>
+                </div>
+            </section>
+
+
+            <section id="sect_services" class="grid grid-cols-2 mx-auto mt-16 md:gap-10 ">
+                <! - picture ->
+                    <div class="ml-auto" id="image">
+                        <img class=" rounded-xl" src="img/tom.jpg" alt="Tom Gonzales Online Training">
+                    </div>
+                    <div class="ml-8 mr-2 md:mr-16">
+                        <! - Services ->
+                            <div id="services">
+                                <h3>I offer you:</h3>
+                                <ul>
+                                    <li>Lessons via Skype and you can record all sessions and watch them again later.
+                                    </li>
+                                    <li>Holistic full body training</li>
+                                    <li>Training without equipment</li>
+                                    <li>Pain reduction</li>
+                                    <li>Tailored nutrition plans</li>
+                                </ul>
+                                <div id="qualifications" class="mt-12">
+                                    <h3>My qualifications:</h3>
+                                    <ul>
+                                        <li>Certified nutritionist</li>
+                                        <li>Certified fitness trainer</li>
+                                        <li>5 years of experience in 1: 1 training</li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+
+
+            </section>
+            <section id="sect_payment" class="w-8/12 mx-auto mt-12">
+
+                <! - Prices and payment ->
+                    <div id="price_payment">
+                        <h2>Prices and payment</h2>
+                        <p>My most important goal is that you get ahead with your goals.</p>
+                        <p>In a free opening session we will discuss what you want to achieve and how much you can
+                            or want to spend. Then we are guaranteed to find a solution that suits you.</p>
+                    </div>
+            </section>
+
+            <section id="sect_contact" class="mt-12">
+                <! - Contact ->
+                    <div id="contact" class="grid w-8/12 grid-cols-2 mx-auto">
+                        <div id="email">
+                            <p class="mb-2 ">Your message:</p>
+                            <a class="px-2 py-1 transition duration-75 bg-gray-300 rounded shadow-sm hover:bg-gray-400 hover:shadow-none"
+                                href="mailto:markusgonzales@gmail.com"><strong>@</strong> Send an Email</a>
+                        </div>
+                        <div id="whatsApp_telefon">
+                            <p>WhatsApp:</p>
+                            <p>1 222 555 44 33</p>
+                        </div>
+                    </div>
+            </section>
+    </div>
 </body>
 
 </html>
