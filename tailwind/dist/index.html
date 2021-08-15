@@ -1,48 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
     <link rel="stylesheet" href="css/style.css">
     <title>Tailwind Mini Project</title>
 </head>
 
-<body class="bg-blue-800">
-    <div class="container mx-auto min-h-screen p-2 bg-gray-100">
+<body class="bg-mainColor dark:bg-black">
+    <div class="container min-h-screen p-2 mx-auto bg-gray-100 dark:bg-mainColor">
         <! - page header / headings ->
             <section id="sect_header" class="text-center">
                 <div>
-                    <h1 class="font-semibold capitalize pt-5">Tom Gonzales home training</h1>
-                    <h2 class="font-medium capitalize pt-1">I'll get you in
+                    <h1 class="pt-5">Tom Gonzales home training</h1>
+                    <h2 class="pt-1">I'll get you in
                         shape!</h2>
                     <h3>Muscle building • Functional training • Nutritional advice</h3>
                 </div>
             </section>
 
 
-            <section id="sect_services" class="mt-16 grid grid-cols-2 gap-4">
+            <section id="sect_services" class="grid grid-cols-2 mx-auto mt-16 md:gap-10 ">
                 <! - picture ->
-                    <div id="image">
+                    <div class="ml-auto" id="image">
                         <img class=" rounded-xl" src="img/tom.jpg" alt="Tom Gonzales Online Training">
                     </div>
-                    <! - Services ->
-                        <div id="services">
-                            <h3>I offer you:</h3>
-                            <ul>
-                                <li>Lessons via Skype and you can record all sessions and watch them again later. </li>
-                                <li>Holistic full body training</li>
-                                <li>Training without equipment</li>
-                                <li>Pain reduction</li>
-                                <li>Tailored nutrition plans</li>
-                            </ul>
-                            <h3>My qualifications:</h3>
-                            <ul>
-                                <li>Certified nutritionist</li>
-                                <li>Certified fitness trainer</li>
-                                <li>5 years of experience in 1: 1 training</li>
-                            </ul>
-                        </div>
+                    <div class="ml-8 mr-2 md:mr-16">
+                        <! - Services ->
+                            <div id="services">
+                                <h3>I offer you:</h3>
+                                <ul>
+                                    <li>Lessons via Skype and you can record all sessions and watch them again later.
+                                    </li>
+                                    <li>Holistic full body training</li>
+                                    <li>Training without equipment</li>
+                                    <li>Pain reduction</li>
+                                    <li>Tailored nutrition plans</li>
+                                </ul>
+                                <div id="qualifications" class="mt-12">
+                                    <h3>My qualifications:</h3>
+                                    <ul>
+                                        <li>Certified nutritionist</li>
+                                        <li>Certified fitness trainer</li>
+                                        <li>5 years of experience in 1: 1 training</li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+
+
             </section>
-            <section id="sect_payment" class="mt-12 w-8/12 mx-auto">
+            <section id="sect_payment" class="w-8/12 mx-auto mt-12">
 
                 <! - Prices and payment ->
                     <div id="price_payment">
@@ -55,16 +62,15 @@
 
             <section id="sect_contact" class="mt-12">
                 <! - Contact ->
-                    <div id="contact" class="grid grid-cols-2 w-8/12 mx-auto">
+                    <div id="contact" class="grid w-8/12 grid-cols-2 mx-auto">
                         <div id="email">
-                            <p>Your message:</p>
-                            <a href="mailto:markusgonzales@gmail.com">Send
-                                an
-                                Email</a>
+                            <p class="mb-2 ">Your message:</p>
+                            <a class="px-2 py-1 transition duration-75 bg-gray-300 rounded shadow-sm hover:bg-gray-400 hover:shadow-none"
+                                href="mailto:markusgonzales@gmail.com"><strong>@</strong> Send an Email</a>
                         </div>
                         <div id="whatsApp_telefon">
                             <p>WhatsApp:</p>
-                            1 222 555 44 33
+                            <p>1 222 555 44 33</p>
                         </div>
                     </div>
             </section>
