@@ -1,15 +1,17 @@
 const request = require('postman-request')
 
-const weatherApi = {
-    apiKey: '9153eb88e43c9e0ac3bd9005cc36dd19',
-    baseUrl: 'http://api.weatherstack.com/',
-    query: 'New%20York',
-    getUrl() {
-        return `${this.baseUrl}/current?access_key=${this.apiKey}&query=${this.query}`;
-    }
+
+const geocode = (adress, callback) => {
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(adress)}.json?access_token=pk.eyJ1IjoiYW1tYXJhbHkiLCJhIjoiY2tzaHNkNDFuMXg4djJuczYwdHE5YTExYiJ9.oabhaYBksEG1uAwu-_iA7g&limit=1`;
+    request({ url, json: true }, callback);
 }
 
-request({ url: weatherApi.getUrl(), json: true }, (err, res) => {
+const weather = (query, callback) => {
+    const url = `http://api.weatherstack.com/current?access_key=9153eb88e43c9e0ac3bd9005cc36dd19&query=${query}`;
+    request({ url, json: true }, callback);
+}
+
+weather("Lahore", (err, res) => {
     if (err) {
         console.log("Unable to connect to weather service.")
         return;
@@ -20,19 +22,9 @@ request({ url: weatherApi.getUrl(), json: true }, (err, res) => {
     }
     let message = `Weather is ${res.body.current.weather_descriptions[0]}. It is currently ${res.body.current.temperature} degrees out. It feels like ${res.body.current.feelslike} degrees.`;
     console.log(message);
-});
+})
 
-const mapBoxGeocodingApi = {
-    apiKey: 'pk.eyJ1IjoiYW1tYXJhbHkiLCJhIjoiY2tzaHNkNDFuMXg4djJuczYwdHE5YTExYiJ9.oabhaYBksEG1uAwu-_iA7g',
-    baseUrl: 'https://api.mapbox.com/geocoding/v5/mapbox.places',
-    search_text: '*',
-    limit: 1,
-    getUrl() {
-        return `${this.baseUrl}/${this.search_text}.json?access_token=${this.apiKey}&limit=${this.limit}`;
-    }
-}
-
-request({ url: mapBoxGeocodingApi.getUrl(), json: true }, (err, res) => {
+geocode("Lahore Punjab", (err, res) => {
     if (err) {
         console.log("Unable to connect to geocoding service.")
         return;
